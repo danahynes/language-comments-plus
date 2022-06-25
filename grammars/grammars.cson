@@ -1,0 +1,67 @@
+#------------------------------------------------------------------------------#
+# Filename: grammars/grammars.cson                               /          \  #
+# Project : language-comments-plus                              |     ()     | #
+# Date    : 06/02/2022                                          |            | #
+# Author  : Dana Hynes                                          |   \____/   | #
+# License : WTFPLv2                                              \          /  #
+#------------------------------------------------------------------------------#
+
+# this file does the syntax matching using a regex
+# it also produces the token's scope selector for coloring
+
+# the scope selector used by other parts of atom (mostly other grammars)
+# this is a unique name that (hopefully) is not used by any other grammars
+scopeName: 'text.comments-plus'
+
+# since we don't have fileTypes (this grammar is not stand-alone and not meant
+# for any specific language) we inject ourselves into any grammar that uses
+# comments (most source files).
+# note that this grammmar will now ONLY be used in files, and on lines, that
+# have 'comment' scope somewhere in their heirerarchy (so not plain text files,
+# or source file lines that are not already tagged as comment lines).
+# when the parser encounters a line with 'comment' in its scope, it will
+# call us to parse using our pattern(s) to apply additional scope(s) to the
+# tokens we find in that line.
+injectionSelector: 'comment'
+
+# NB: we run the match twice here becasue we don't have the whole line.
+# from what i can tell, the syntax highlighter gets the beginning of the
+# comment (the opening delimiter, like # or //), then passes the rest of the
+# line to us. but if it's a comment that has an end (like an html tag or a 
+# c/cpp multiline /**/) then we have to give back the rest of the string so the
+# syntax highlighter can find the end tag. the easiest way to do this is just
+# scan each line to find our token and give the rest back either way. the only
+# problem with that is trying to enforce that the token be preceeded by
+# whitespace. since we don't have the beginning of the line, we can't use ^. so
+# we have to grab everything up to and including our token, abd then use ^ in
+# the sub-match to make sure it starts with whitespace. so we look for the token
+# twice. it's ugly but it works and it doesn't highlight the token if it appears
+# anywhere else in a comment other than at the beginning.
+
+# the array of patterns to match
+patterns: [
+  {
+
+    # try to find our token and maybe a colon
+    match: '.*(TODO|NB|I18N)(\\s*:)?'
+    captures:
+
+      # take everything up to and including the token
+      0:
+        patterns: [
+          {
+
+            # now make sure it all starts with only whitespace
+            # followed by our token, and maybe followed by a colon
+            match: '^\\s*(TODO|NB|I18N)(\\s*:)?'
+            captures:
+
+              # apply the found token's style to the token, spaces, and colon
+              1: name: 'comment.$1.comments-plus'
+              2: name: 'comment.$1.comments-plus'
+          }
+        ]
+  }
+]
+
+# -)

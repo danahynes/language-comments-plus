@@ -1,0 +1,40 @@
+//-----------------------------------------------------------------------------#
+// Filename: styles/styles.less                                  /          \  #
+// Project : language-comments-plus                             |     ()     | #
+// Date    : 06/02/2022                                         |            | #
+// Author  : Dana Hynes                                         |   \____/   | #
+// License : WTFPLv2                                             \          /  #
+//-----------------------------------------------------------------------------#
+
+// this file contains the default styles for the specified tokens
+// style precedence is:
+// user's styles
+// these styles
+// theme styles
+
+// the global scope selector
+atom-text-editor {
+
+  // the token/language name scope selector
+  // any token not defined here will be styled by user's styles/current syntax
+  // theme
+  .syntax--TODO.syntax--comments-plus {
+
+    // default colors/style, can be overridden in user's 'styles.less'
+    color: black;
+    background-color: yellow;
+    font-weight: bold
+  }
+  .syntax--NB.syntax--comments-plus {
+    color: black;
+    background-color: grey;
+    font-weight: bold
+  }
+  .syntax--I18N.syntax--comments-plus {
+    color: black;
+    background-color: blue;
+    font-weight: bold
+  }
+}
+
+// -)

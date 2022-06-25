@@ -1,0 +1,35 @@
+
+make new repo/delete old one
+
+how to highlight _('') (_\(.*?\)) - add new pattern
+  actually make this a new lang with its own parser/style/snippet
+  {
+      match: '_\\([\\\'\\\"].*[\\\'\\\"]\\)'
+      captures:
+        0: name: 'comment.TODO.comments-plus'
+  }
+
+maker to ease creating grammars/styles/snippets
+no settings at all (not even snippets)
+
+things to consider:
+
+  single line comments with start/end tags (html/cpp):
+
+    <!-- TODO: -->
+    /* TODO: */
+
+  multiline comments (cpp):
+
+    /* foo
+    */
+
+    /*
+    foo
+    */
+
+things before token
+  only whitespace characters
+
+things after tokens
+  only whitespace and [space/colon]

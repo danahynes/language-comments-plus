@@ -1,0 +1,30 @@
+{
+  "name": "language-comments-plus",
+  "version": "0.1.0",
+  "description": "A highlighter for tokens in comments",
+  "homepage": "https://github.com/danahynes/language-comments-plus",
+  "repository": "https://github.com/danahynes/language-comments-plus",
+  "bugs": "https://github.com/danahynes/language-comments-plus/issues",
+  "license": "WTFPLv2",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "keywords": [
+    "syntax",
+    "grammar",
+    "snippet",
+    "snippets",
+    "highlight",
+    "highlights",
+    "highlighter",
+    "highlighting",
+    "comment",
+    "comments",
+    "todo",
+    "todos",
+    "token",
+    "tokens",
+    "language",
+    "languages"
+  ]
+}

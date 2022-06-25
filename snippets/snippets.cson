@@ -1,0 +1,98 @@
+#------------------------------------------------------------------------------#
+# Filename: snippets/snippets.cson                               /          \  #
+# Project : language-comments-plus                              |     ()     | #
+# Date    : 06/02/2022                                          |            | #
+# Author  : Dana Hynes                                          |   \____/   | #
+# License : WTFPLv2                                              \          /  #
+#------------------------------------------------------------------------------#
+
+# this file contains snippets to autocomplete the tokens to highlight
+# snippet precedence is:
+# user's snippets file
+# this file
+
+# the scope to apply the snippet to
+'.source.ruby, .source.puppet, .source.coffee, .source.python':
+
+  # the name shown on the right side of the popup
+  'I18N Comment':
+
+    # the text to trigger, shown on the left side of the popup
+    prefix: 'i18n'
+
+    # the text to insert in the editor
+    body: '# I18N: $0'
+  'TODO Comment':
+    prefix: 'todo'
+    body: "# TODO: $0"
+  'NB Comment':
+    prefix: 'nb'
+    body: "# NB: $0"
+
+'.text.haml':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '-# I18N: $0'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '-# TODO: $0'
+  'NB Comment':
+    prefix: 'nb'
+    body: '-# NB: $0'
+
+'.text.html.ruby, .text.erb':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '<%# I18N: $0 %>'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '<%# TODO: $0 %>'
+  'NB Comment':
+    prefix: 'nb'
+    body: '<%# NB: $0 %>'
+
+'.html.basic':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '<!-- I18N: $0 -->'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '<!-- TODO: $0 -->'
+  'NB Comment':
+    prefix: 'nb'
+    body: '<!-- NB: $0 -->'
+
+'.source.scss, .source.sass, .source.css.scss, .source.css.sass, .source.css.less, .source.js, .source.go, .source.scala, .source.ts, .source.php, .source.java':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '// I18N: $0'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '// TODO $0'
+  'NB Comment':
+    prefix: 'nb'
+    body: '// NB: $0'
+
+'.source.css':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '/* I18N: $0 */'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '/* TODO $0 */'
+  'NB Comment':
+    prefix: 'nb'
+    body: '/* NB: $0 */'
+
+'.text.html.php':
+  'I18N Comment':
+    prefix: 'i18n'
+    body: '<?php // I18N: $1 ?>$0'
+  'TODO Comment':
+    prefix: 'todo'
+    body: '<?php // TODO: $1 ?>$0'
+  'NB Comment':
+    prefix: 'nb'
+    body: '<?php // NB: $1 ?>$0'
+
+# -)
