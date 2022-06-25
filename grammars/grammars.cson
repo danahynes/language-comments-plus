@@ -27,7 +27,7 @@ injectionSelector: 'comment'
 # NB: we run the match twice here becasue we don't have the whole line.
 # from what i can tell, the syntax highlighter gets the beginning of the
 # comment (the opening delimiter, like # or //), then passes the rest of the
-# line to us. but if it's a comment that has an end (like an html tag or a 
+# line to us. but if it's a comment that has an end (like an html tag or a
 # c/cpp multiline /**/) then we have to give back the rest of the string so the
 # syntax highlighter can find the end tag. the easiest way to do this is just
 # scan each line to find our token and give the rest back either way. the only
@@ -53,7 +53,7 @@ patterns: [
 
             # now make sure it all starts with only whitespace
             # followed by our token, and maybe followed by a colon
-            match: '^\\s*(TODO|NB|I18N)(\\s*:)?'
+            match: '^\\W*(TODO|NB|I18N)(\\s*:)?'
             captures:
 
               # apply the found token's style to the token, spaces, and colon
