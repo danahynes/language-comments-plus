@@ -35,7 +35,7 @@ injectionSelector: 'comment'
 # whitespace. since we don't have the beginning of the line, we can't use ^. so
 # we have to grab everything up to and including our token, abd then use ^ in
 # the sub-match to make sure it starts with whitespace. so we look for the token
-# twice. it's ugly but it works and it doesn't highlight the token if it appears
+# twice. it's ugly but it works and it doesn't highlight  the token if it appears
 # anywhere else in a comment other than at the beginning.
 
 # the array of patterns to match
