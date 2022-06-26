@@ -1,8 +1,0 @@
-scopeName: 'text.comments-plus'
-injectionSelector: 'comment'
-patterns: [
-  {
-    match: '\\b(TODO|I18N|NB)\\b'
-    name: 'comment.$1.comments-plus'
-  }
-]

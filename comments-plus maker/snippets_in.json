@@ -1,5 +1,4 @@
 {
   ".source.python": "# $TOKEN: $0",
-  ".html.basic": "<!-- $TOKEN: $0 -->",
-  ".source.python": "# $TOKEN: $0"
+  ".html.basic": "<!-- $TOKEN: $0 -->"
 }

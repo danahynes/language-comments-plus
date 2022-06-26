@@ -1,2 +1,0 @@
-.source.python|# $TOKEN: $0
-.html.basic|<!-- $TOKEN: $0 -->
