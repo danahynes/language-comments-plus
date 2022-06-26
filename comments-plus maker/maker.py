@@ -118,7 +118,7 @@ def main():
             out += '    prefix: \'' + token['name'].lower() + '\'\n'
             out += '    body: \'' + snippets[lang] + '\'\n'
 
-    with open('snippets_template.cson', 'w') as file:
+    with open('snippets.cson', 'w') as file:
         file.write(out)
 
 if __name__ == '__main__':
